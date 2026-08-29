@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Ponnar Sankar Pranav Transport
+    </title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            background: #f2f4f7;
+
+            min-height: 100vh;
+
+            padding: 20px;
+        }
+
+        .container {
+
+            width: 600px;
+
+            max-width: 100%;
+
+            margin: 30px auto;
+
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 4px 15px
+                rgba(0,0,0,0.15);
+        }
+
+        h1 {
+
+            text-align: center;
+
+            color: #1d4ed8;
+
+            font-size: 25px;
+
+            margin-bottom: 10px;
+        }
+
+        h2 {
+
+            text-align: center;
+
+            margin-bottom: 25px;
+        }
+
+        #loggedUser {
+
+            text-align: center;
+
+            color: #555;
+
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+
+            margin-bottom: 18px;
+        }
+
+        label {
+
+            display: block;
+
+            margin-bottom: 7px;
+
+            font-weight: bold;
+        }
+
+        input {
+
+            width: 100%;
+
+            padding: 12px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 6px;
+
+            font-size: 16px;
+        }
+
+        input:focus {
+
+            outline: none;
+
+            border-color: #2563eb;
+        }
+
+        button {
+
+            width: 100%;
+
+            padding: 13px;
+
+            border: none;
+
+            border-radius: 6px;
+
+            background: #2563eb;
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            margin-top: 10px;
+        }
+
+        button:hover {
+
+            background: #1d4ed8;
+        }
+
+        .logout {
+
+            background: #dc2626;
+
+            margin-top: 15px;
+        }
+
+        .logout:hover {
+
+            background: #b91c1c;
+        }
+
+        #message {
+
+            margin-top: 15px;
+
+            padding: 12px;
+
+            text-align: center;
+
+            border-radius: 6px;
+        }
+
+        .success {
+
+            background: #dcfce7;
+
+            color: #166534;
+        }
+
+        .error {
+
+            background: #fee2e2;
+
+            color: #991b1b;
+        }
+
+        .section-title {
+
+            margin-top: 25px;
+
+            margin-bottom: 15px;
+
+            padding-bottom: 8px;
+
+            border-bottom: 2px solid #2563eb;
+
+            color: #1d4ed8;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+    <h1>
+        Ponnar Sankar Pranav Transport
+    </h1>
+
+
+    <h2>
+        Vehicle Information
+    </h2>
+
+
+    <p id="loggedUser"></p>
+
+
+    <form id="vehicleForm">
+
+
+        <!-- VEHICLE INFORMATION -->
+
+        <h3 class="section-title">
+            Vehicle Information
+        </h3>
+
+
+        <div class="form-group">
+
+            <label for="vehicleName">
+                Vehicle Name
+            </label>
+
+            <input
+                type="text"
+                id="vehicleName"
+                placeholder="Enter vehicle name"
+                required
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="ownerName">
+                Owner Name
+            </label>
+
+            <input
+                type="text"
+                id="ownerName"
+                placeholder="Enter owner name"
+                required
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="vehicleAge">
+                Vehicle Age
+            </label>
+
+            <input
+                type="number"
+                id="vehicleAge"
+                min="0"
+                placeholder="Enter vehicle age"
+                required
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="vehicleMileage">
+                Vehicle Mileage
+            </label>
+
+            <input
+                type="number"
+                id="vehicleMileage"
+                min="0"
+                step="0.01"
+                placeholder="Example: 12.5 km/l"
+                required
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="vehicleKm">
+                Vehicle KM
+            </label>
+
+            <input
+                type="number"
+                id="vehicleKm"
+                min="0"
+                placeholder="Enter vehicle KM"
+                required
+            >
+
+        </div>
+
+
+        <!-- TRANSPORT INFORMATION -->
+
+        <h3 class="section-title">
+            Transport Information
+        </h3>
+
+
+        <div class="form-group">
+
+            <label for="origin">
+                Transport Origin Place
+            </label>
+
+            <input
+                type="text"
+                id="origin"
+                placeholder="Enter origin place"
+                required
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="destination">
+                Destination Place
+            </label>
+
+            <input
+                type="text"
+                id="destination"
+                placeholder="Enter destination place"
+                required
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="startTime">
+                Vehicle Start Time
+            </label>
+
+            <input
+                type="datetime-local"
+                id="startTime"
+                required
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="targetEndTime">
+                Target End Time
+            </label>
+
+            <input
+                type="datetime-local"
+                id="targetEndTime"
+                required
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="driverName">
+                Driver Name
+            </label>
+
+            <input
+                type="text"
+                id="driverName"
+                placeholder="Enter driver name"
+                required
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="entryDate">
+                Date
+            </label>
+
+            <input
+                type="date"
+                id="entryDate"
+                required
+            >
+
+        </div>
+
+
+        <button type="submit">
+            Submit Information
+        </button>
+
+
+    </form>
+
+
+    <div id="message"></div>
+
+
+    <!-- USER CAN ONLY LOGOUT -->
+
+    <button
+        class="logout"
+        onclick="logout()">
+
+        Logout
+
+    </button>
+
+
+</div>
+
+
+<script>
+
+
+// ========================================
+// SET TODAY'S DATE
+// ========================================
+
+document.getElementById("entryDate").value =
+    new Date()
+        .toISOString()
+        .split("T")[0];
+
+
+// ========================================
+// CHECK LOGIN
+// ========================================
+
+const loggedUser =
+    localStorage.getItem("loggedUser");
+
+if (!loggedUser) {
+
+    window.location.href = "login.html";
+
+}
+
+else {
+
+    document.getElementById("loggedUser")
+        .textContent =
+        "Logged in as: " + loggedUser;
+
+}
+
+
+// ========================================
+// SUBMIT INFORMATION
+// ========================================
+
+document
+.getElementById("vehicleForm")
+.addEventListener(
+    "submit",
+    function(event) {
+
+        event.preventDefault();
+
+
+        const record = {
+
+            user:
+
+                localStorage.getItem(
+                    "loggedUser"
+                ),
+
+            vehicleName:
+
+                document.getElementById(
+                    "vehicleName"
+                ).value.trim(),
+
+            ownerName:
+
+                document.getElementById(
+                    "ownerName"
+                ).value.trim(),
+
+            vehicleAge:
+
+                document.getElementById(
+                    "vehicleAge"
+                ).value,
+
+            vehicleMileage:
+
+                document.getElementById(
+                    "vehicleMileage"
+                ).value,
+
+            vehicleKm:
+
+                document.getElementById(
+                    "vehicleKm"
+                ).value,
+
+            origin:
+
+                document.getElementById(
+                    "origin"
+                ).value.trim(),
+
+            destination:
+
+                document.getElementById(
+                    "destination"
+                ).value.trim(),
+
+            startTime:
+
+                document.getElementById(
+                    "startTime"
+                ).value,
+
+            targetEndTime:
+
+                document.getElementById(
+                    "targetEndTime"
+                ).value,
+
+            driverName:
+
+                document.getElementById(
+                    "driverName"
+                ).value.trim(),
+
+            entryDate:
+
+                document.getElementById(
+                    "entryDate"
+                ).value,
+
+            savedAt:
+
+                new Date().toLocaleString()
+
+        };
+
+
+        // ========================================
+        // GET EXISTING RECORDS
+        // ========================================
+
+        let records =
+
+            JSON.parse(
+                localStorage.getItem(
+                    "vehicleRecords"
+                )
+            ) || [];
+
+
+        // ========================================
+        // ADD NEW RECORD
+        // ========================================
+
+        records.push(record);
+
+
+        // ========================================
+        // SAVE RECORD
+        // ========================================
+
+        localStorage.setItem(
+            "vehicleRecords",
+            JSON.stringify(records)
+        );
+
+
+        // ========================================
+        // SUCCESS MESSAGE
+        // ========================================
+
+        const message =
+            document.getElementById(
+                "message"
+            );
+
+        message.textContent =
+            "Information saved successfully.";
+
+        message.className =
+            "success";
+
+
+        // ========================================
+        // CLEAR FORM
+        // ========================================
+
+        document
+            .getElementById(
+                "vehicleForm"
+            )
+            .reset();
+
+
+        // Set date again
+
+        document.getElementById(
+            "entryDate"
+        ).value =
+
+            new Date()
+                .toISOString()
+                .split("T")[0];
+
+    }
+);
+
+
+// ========================================
+// LOGOUT
+// ========================================
+
+function logout() {
+
+    localStorage.removeItem(
+        "loggedUser"
+    );
+
+    window.location.href =
+        "login.html";
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
